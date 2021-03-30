@@ -127,12 +127,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Используем шаблоны для карточек
 
   class MenuCard {
-    constructor(src, alt, title, descr, price, perentSelector) {
+    constructor(src, alt, title, descr, price, perentSelector, ...classes) { // В конце используется rest оператор
       this.src = src;
       this.alt = alt;
       this.title = title;
       this.descr = descr;
       this.price = price;
+      this.classes = classes;
       this.parent = document.querySelector(perentSelector);
       this.transfer = 27;
       this.changeToUAH();
@@ -144,8 +145,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
     render() {
       const element = document.createElement('div');
+
+      // Проверка на отсутствие дефолтного класса menu__item, и установка его [menu__item]
+      if (this.classes.length === 0) {
+        this.element = 'menu__item';
+        element.classList.add(this.element);
+      } else {
+        this.classes.forEach(className => element.classList.add(className));
+      }
+
+
       element.innerHTML = `
-      <div class="menu__item">
           <img src=${this.src} alt=${this.alt}>
           <h3 class="menu__item-subtitle">${this.title}</h3>
           <div class="menu__item-descr">${this.descr}</div>
@@ -154,7 +164,6 @@ document.addEventListener('DOMContentLoaded', () => {
               <div class="menu__item-cost">Цена:</div>
               <div class="menu__item-total"><span>${this.price}</span> грн/день</div>
           </div>
-      </div>
       `;
       // Помещаем перент
       this.parent.append(element);
@@ -167,7 +176,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "Menu 2222",
     "    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet iusto commodi, dolore esse dicta debitis ipsum impedit ",
     9,
-    ".menu .container"
+    ".menu .container",
+
   ).render();
 
   new MenuCard(
@@ -176,7 +186,9 @@ document.addEventListener('DOMContentLoaded', () => {
     "Menu 2222",
     "    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet iusto commodi, dolore esse dicta debitis ipsum impedit ",
     9,
-    ".menu .container"
+    ".menu .container",
+    "menu__item",
+    "big"
   ).render();
 
   new MenuCard(
@@ -185,6 +197,8 @@ document.addEventListener('DOMContentLoaded', () => {
     "Menu 2222",
     "    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet iusto commodi, dolore esse dicta debitis ipsum impedit ",
     9,
-    ".menu .container"
+    ".menu .container",
+    "menu__item",
+    "big"
   ).render();
 });
