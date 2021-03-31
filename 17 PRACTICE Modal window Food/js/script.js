@@ -112,7 +112,7 @@ document.addEventListener('DOMContentLoaded', () => {
       modal.classList.toggle('show');
       document.body.style.overflow = 'hidden';
     });
-  })
+  });
 
 
   modalCloseBtn.addEventListener('click', () => {
