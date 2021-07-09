@@ -1,10 +1,14 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './randomChar.css';
 
 export default class RandomChar extends Component {
 
-    render() {
+    // state = {
+    //     name: null,
+    //     Gender
+    // }
 
+    render() {
         return (
             <div className="random-block rounded">
                 <h4>Random Character: John</h4>
