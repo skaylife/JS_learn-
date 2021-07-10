@@ -147,7 +147,7 @@ function App() {
             <button type="sumbit">Push</button>
           </form>
           <ul>
-            {t5.map(item => <li key={item.ccy}>{item.ccy}: <br /> - Покупка : {item.buy} <br /> - Продажа : {item.sale}</li>)}
+            {t5.map(item => <li key={item.ccy}>{item.ccy}: <br /> - Покупка : {item.buy} <br /> - Продажа : {item.sale} <hr /></li>)}
           </ul>
         </div>
       </div>
