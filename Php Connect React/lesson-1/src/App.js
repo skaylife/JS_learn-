@@ -6,7 +6,7 @@ import React, { useState, useEfect } from 'react';
 
 function App() {
 
-
+  const [t1, setT1] = useState(''); // Для вывода
 
   function clickHandler() {
     fetch("http://react-and-php", {
@@ -18,7 +18,8 @@ function App() {
     })
       .then(response => response.text())
       .then(response => {
-        console.log(response);
+        console.log("Work backend : ", response);
+        setT1(response);
       })
   }
 
@@ -26,6 +27,8 @@ function App() {
     <div className="constainer">
       <h1>Dragon Info</h1>
       <button onClick={clickHandler}>Go</button>
+      <h3>Вывод с файла :</h3>
+      <div>{t1}</div>
     </div>
   );
 }
