@@ -10,6 +10,16 @@ npx json-server --watch db.json
 ## Тема "Getter and Setter" Practice 
 `https://jsfiddle.net/7yf0mr9k/`
 
+## Как установить чистиый TypeScript?
+```sh
+npm init -y
+npm i typescript --save-dev
+npx tsc --init
+```
+Строчка для установки пакетов для Webpack:
+
+`npm i html-webpack-plugin webpack-dev-server webpack ts-loader css-loader style-loader`
+
 # Как в Reacte'e работают "State'ты"? - Num 1
 
 ## Стиль ООП - 58 строчек кода
