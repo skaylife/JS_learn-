@@ -6,8 +6,9 @@ import ErrorMessage from '../error/errorMessage';
 
 
 export default class RandomChar extends Component {
-
     render() {
+
+
 
         return (
             <>
@@ -19,11 +20,11 @@ export default class RandomChar extends Component {
                     </li>
                     <li className="list-group-item d-flex justify-content-between">
                         <span className="term">Born </span>
-                        <span>11.03.1555</span>
+                        <span>11.31.1234</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between">
                         <span className="term">Died </span>
-                        <span>13.09.1088</span>
+                        <span>13.21.1948</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between">
                         <span className="term">Culture </span>
