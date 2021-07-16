@@ -14,9 +14,13 @@
     width: 100%;
 }
 
-h4 {
-    color: rgb(0, 89, 255);   
+p {
+    color: rgb(22, 22, 22);
+    font-size: 1.3rem; 
+    font-weight: 400;
 }
-h5 {
-    color: white;
+.title {
+    color: rgb(0, 89, 255); 
+    font-size: 1.3rem;
+    font-weight: 600;
 }
