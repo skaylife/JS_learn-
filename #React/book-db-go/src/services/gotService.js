@@ -25,7 +25,7 @@ export default class GotService {
     }
 
     async getAllCharacters() {
-        const res = await this.getResource(`/characters?page=5&pageSize=10`);
+        const res = await this.getResource(`/characters?page=12&pageSize=10`);
         return res.map(this._transformCharacter);
     }
 
@@ -43,6 +43,7 @@ export default class GotService {
         const house = this.getResource(`/houses/${id}/`);
         return this._transformHouse(house);
     }
+
 
 
 
@@ -84,3 +85,50 @@ export default class GotService {
         };
     }
 }
+
+//https://anapioficeandfire.com/api/characters?page=8&pageSize=1
+const book = () =>
+    [
+        [{
+            "url": "https://anapioficeandfire.com/api/characters/8",
+            "name": "",
+            "gender": "Male",
+            "culture": "",
+            "born": "",
+            "died": "",
+            "titles": [""],
+            "aliases": ["Quickfinger"],
+            "father": "",
+            "mother": "",
+            "spouse": "",
+            "allegiances": ["https://anapioficeandfire.com/api/houses/23"],
+            "books": ["https://anapioficeandfire.com/api/books/6"],
+            "povBooks": [], "tvSeries": [""], "playedBy": [""]
+        }]
+    ]
+
+//https://anapioficeandfire.com/api/characters/55
+const book2 = () =>
+    [{
+        "url": "https://www.anapioficeandfire.com/api/characters/55",
+        "name": "Aemond Targaryen",
+        "gender": "Male",
+        "culture": "Valyrian",
+        "born": "In 110 AC",
+        "died": "In 130 AC, at the Gods Eye",
+        "titles": ["Prince",
+            "Protector of the Realm",
+            "Prince Regent"],
+        "aliases": ["Aemond One-Eye Aemond the Kinslayer"],
+        "father": "",
+        "mother": "",
+        "spouse": "",
+        "allegiances": ["https://www.anapioficeandfire.com/api/houses/378"],
+        "books": ["https://www.anapioficeandfire.com/api/books/8",
+            "https://www.anapioficeandfire.com/api/books/9",
+            "https://www.anapioficeandfire.com/api/books/10",
+            "https://www.anapioficeandfire.com/api/books/11"],
+        "povBooks": [],
+        "tvSeries": [""],
+        "playedBy": [""]
+    }]
