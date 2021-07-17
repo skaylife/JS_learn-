@@ -5,6 +5,7 @@ import ErrorMessage from '../error';
 import Spinner from '../spinner/';
 
 
+
 export default class ItemList extends Component {
 
     gotService = new gotService();
@@ -14,6 +15,8 @@ export default class ItemList extends Component {
         error: false
     }
     componentDidMount() {
+
+
         this.gotService.getAllCharacters()
             .then((charList) => {
                 this.setState({
@@ -37,10 +40,11 @@ export default class ItemList extends Component {
     }
     renderItems(arr) {
         return arr.map((item) => {
-            const { id, name } = item;
+            console.log(item)
+            const { id, name, url } = item;
             return (
                 <li
-                    key={id}
+                    key={url}
                     className="list-group-item"
                     onClick={() => this.props.onCharSelected(id)}
                 >
@@ -67,7 +71,28 @@ export default class ItemList extends Component {
         return (
             <ul className="item-list list-group">
                 {items}
+
             </ul>
         );
     }
 }
+
+
+                // let sendData = (obj) => {
+                //     setFormClass('hide');
+                //     setLineClass('');
+                //     fetch(env.urlBackend, {
+                //         method: 'POST',
+                //         headers: {
+                //             'Content-Type': 'application/x-www-form-urlencoded',
+                //         },
+                //         body: JSON.stringify(obj)
+                //     })
+                //         .then(response => response.json())
+                //         .then(response => {
+                //             console.log(response);
+                //             if (response.result) {
+                //                 setUrl(env.url + "/" + response.url);
+                //             }
+                //         })
+                // }

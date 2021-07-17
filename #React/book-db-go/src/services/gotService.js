@@ -24,9 +24,15 @@ export default class GotService {
         return this._transformBook(book);
     }
 
+    // async getAllCharacters() {
+    //     const res = await this.getResource(`/characters?page=12&pageSize=10`);
+    //     return res.map(this._transformCharacter);
+    // }
+
+
+
     async getAllCharacters() {
-        const res = await this.getResource(`/characters?page=12&pageSize=10`);
-        return res.map(this._transformCharacter);
+        return await this.getResource('/characters?page=15&pageSize=4');
     }
 
     async getCharacter(id) {
@@ -132,3 +138,4 @@ const book2 = () =>
         "tvSeries": [""],
         "playedBy": [""]
     }]
+
