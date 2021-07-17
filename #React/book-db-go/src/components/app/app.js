@@ -11,7 +11,7 @@ import './app.css';
 export default class App extends Component {
     state = {
         showRandomChar: true,
-        selectedChar: null,
+        selectedChar: 130,
         error: false
     }
     toggleRandomChar = () => {
@@ -22,9 +22,9 @@ export default class App extends Component {
         });
     }
 
-    onCharSelected = (item) => {
+    onCharSelected = (id) => {
         this.setState({
-            selectedChar: item
+            selectedChar: id
         })
     }
 
