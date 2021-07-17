@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {Col, Row, Container} from 'reactstrap';
+import React, { Component } from 'react';
+import { Col, Row, Container } from 'reactstrap';
 import Header from '../header';
 import RandomChar from '../randomChar';
 import ItemList from '../itemList';
@@ -11,6 +11,7 @@ import './app.css';
 export default class App extends Component {
     state = {
         showRandomChar: true,
+        selectedChar: null,
         error: false
     }
     toggleRandomChar = () => {
@@ -20,31 +21,42 @@ export default class App extends Component {
             }
         });
     }
+
+    onCharSelected = (item) => {
+        this.setState({
+            selectedChar: item
+        })
+    }
+
     render() {
         if (this.state.error) {
-            return <ErrorMessage/>
+            return <ErrorMessage />
         }
-        const char = this.state.showRandomChar ? <RandomChar/> : null;
+        console.log(`Person DETAILS ${this.state.selectedChar}`)
+
+        console.log(this.electedChar)
+        const char = this.state.showRandomChar ? <RandomChar /> : null;
         return (
-            <> 
+            <>
                 <Container>
                     <Header />
                 </Container>
                 <Container>
                     <Row>
-                        <Col lg={{size: 5, offset: 0}}>
+                        <Col lg={{ size: 5, offset: 0 }}>
                             {char}
-                            <button 
+                            <button
                                 className="toggle-btn"
                                 onClick={this.toggleRandomChar}>Toggle random character</button>
                         </Col>
                     </Row>
                     <Row>
                         <Col md='6'>
-                            <ItemList />
+                            <ItemList onCharSelected={this.onCharSelected} />
                         </Col>
                         <Col md='6'>
-                            <PersonDetails />
+
+                            <PersonDetails charId={this.state.selectedChar} />
                         </Col>
                     </Row>
                 </Container>
