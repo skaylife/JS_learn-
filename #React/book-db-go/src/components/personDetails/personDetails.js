@@ -34,6 +34,7 @@ export default class PersonDetails extends Component {
             .then((char) => {
                 this.setState({ char })
             })
+        // this.foo.bar = 0;
     }
 
     render() {
