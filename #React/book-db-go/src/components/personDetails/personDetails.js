@@ -14,6 +14,13 @@ export default class PersonDetails extends Component {
         this.updataChar();
     }
 
+    //Условие которое перезаписывает согласно нажатому персонажу
+    componentDidUpdate(prevProps) {
+        if (this.props.charId !== prevProps.charId) {
+            this.updataChar();
+        }
+    }
+
     updataChar() {
         // { id, name, url, gender, born, died, culture } = item;
         const { charId } = this.props;

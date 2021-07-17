@@ -32,7 +32,7 @@ export default class GotService {
 
 
     async getAllCharacters() {
-        return await this.getResource('/characters?page=15&pageSize=4');
+        return await this.getResource('/characters?page=40&pageSize=10');
     }
 
     async getCharacter(id) {
