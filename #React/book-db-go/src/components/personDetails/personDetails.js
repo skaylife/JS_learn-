@@ -24,7 +24,7 @@ export default class PersonDetails extends Component {
     updataChar() {
         // { id, name, url, gender, born, died, culture } = item;
         const { charId } = this.props;
-        console.log(`Person DETAILS222 ${this.props.item}`)
+        // console.log(`Person DETAILS222 ${this.props.item}`)
 
         if (!charId) {
             return;
@@ -44,8 +44,6 @@ export default class PersonDetails extends Component {
         }
 
         const { name, gender, born, died, culture } = this.state.char
-
-        console.log(` state ${name}`)
 
         return (
             <div className="person-details rounded">

@@ -40,7 +40,10 @@ export default class ItemList extends Component {
     }
     renderItems(arr) {
         return arr.map((item, i) => {
-            console.log(item)
+            // console.log(item)
+
+            const label = this.props.renderItem(item);
+
             const { id, name, url, gender, born, died, culture } = item;
             return (
                 <li
@@ -48,7 +51,7 @@ export default class ItemList extends Component {
                     className="list-group-item"
                     onClick={() => this.props.onCharSelected(391 + i)}
                 >
-                    {name}
+                    {label}
                 </li>
             )
         })
