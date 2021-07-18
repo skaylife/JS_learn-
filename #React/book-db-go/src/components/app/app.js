@@ -4,9 +4,11 @@ import Header from '../header';
 import RandomChar from '../randomChar';
 import ErrorMessage from '../error';
 import CharacterPage from '../characterPage';
+import PersonDetails from '../personDetails';
 
 
 import './app.css';
+import ItemList from '../itemList';
 
 export default class App extends Component {
     state = {
@@ -58,6 +60,22 @@ export default class App extends Component {
                         </Col>
                     </Row>
                     <CharacterPage />
+                    {/*<Row>
+                        <Col md='6'>
+                            <ItemList onCharSelected={this.onCharSelected} />
+                        </Col>
+                        <Col md='6'>
+                            <PersonDetails charId={this.state.selectedChar} />
+                        </Col>
+                    </Row>
+                    <Row>
+                        <Col md='6'>
+                            <ItemList onCharSelected={this.onCharSelected} />
+                        </Col>
+                        <Col md='6'>
+                            <PersonDetails charId={this.state.selectedChar} />
+                        </Col>
+                    </Row> */}
                 </Container>
             </>
         );
