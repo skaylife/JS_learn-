@@ -64,10 +64,11 @@ export default class App extends Component {
                         </Col>
                     </Row>
                     <CharacterPage />
-                    {/*  <Row>
+                    <Row>
                         <Col md='6'>
                             <ItemList onCharSelected={this.onCharSelected}
-                                getData={this.gotService.getAllBooks} />
+                                getData={this.gotService.getAllBooks}
+                                renderItem={(item) => item.name} />
                         </Col>
                         <Col md='6'>
                             <PersonDetails charId={this.state.selectedChar} />
@@ -76,12 +77,13 @@ export default class App extends Component {
                     <Row>
                         <Col md='6'>
                             <ItemList onCharSelected={this.onCharSelected}
-                                getData={this.gotService.getAllHouses} />
+                                getData={this.gotService.getAllHouses}
+                                renderItem={(item) => item.name} />
                         </Col>
                         <Col md='6'>
                             <PersonDetails charId={this.state.selectedChar} />
                         </Col>
-        </Row> */}
+                    </Row> *
                 </Container>
             </>
         );
