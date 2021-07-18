@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import './personDetails.css';
 import gotService from '../../services/gotService';
 
-const Field = ({ item, field, label }) => {
+const Field = ({ char, field, label }) => {
     return (
         <li className="list-group-item d-flex justify-content-between">
             <span className="term">{label}</span>
-            <span>{[field]}</span>
+            <span>{char[field]}</span>
         </li>)
 }
 
@@ -55,13 +55,19 @@ export default class PersonDetails extends Component {
             return <span className="">Выберите персонажа</span>
         }
 
-        const { name, gender, born, died, culture } = this.state.char
+        const { char } = this.state;
+
+        const { name } = char
 
         return (
             <div className="person-details rounded">
                 <h4>{name}</h4>
                 <ul className="list-group list-group-flush">
-                    {this.props.children}
+                    {
+                        React.Children.map(this.props.children, (child) => {
+                            return React.cloneElement(child, { char })
+                        })
+                    }
                 </ul>
             </div>
         );
