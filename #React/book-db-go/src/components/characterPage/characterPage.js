@@ -4,19 +4,9 @@ import ErrorMessage from '../error';
 import ItemList from '../itemList';
 import PersonDetails from '../personDetails';
 import gotService from '../../services/gotService';
+import RowBlock from '../rowBlock/rowBlock';
 
-const RowBlock = (left, right) => {
-  return (
-    <Row>
-      <Col md='6'>
-        {left}
-      </Col>
-      <Col md='6'>
-        {right}
-      </Col>
-    </Row>
-  )
-}
+
 
 export default class CharacterPage extends Component {
 
