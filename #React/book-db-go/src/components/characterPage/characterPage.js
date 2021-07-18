@@ -5,6 +5,19 @@ import ItemList from '../itemList';
 import PersonDetails from '../personDetails';
 import gotService from '../../services/gotService';
 
+const RowBlock = (left, right) => {
+  return (
+    <Row>
+      <Col md='6'>
+        {left}
+      </Col>
+      <Col md='6'>
+        {right}
+      </Col>
+    </Row>
+  )
+}
+
 export default class CharacterPage extends Component {
 
   gotService = new gotService();
@@ -32,18 +45,20 @@ export default class CharacterPage extends Component {
       return <ErrorMessage />
     }
 
-    return (
-      <Row>
-        <Col md='6'>
-          <ItemList onCharSelected={this.onCharSelected}
-            getData={this.gotService.getAllCharacters}
-            renderItem={({ name, gender }) => `${name}  (${gender})`} />
-        </Col>
-        <Col md='6'>
+    const itemList = (
+      <ItemList onCharSelected={this.onCharSelected}
+        getData={this.gotService.getAllCharacters}
+        renderItem={({ name, gender }) => `${name}  (${gender})`} />
+    )
 
-          <PersonDetails charId={this.state.selectedChar} />
-        </Col>
-      </Row>
+    const charDetails = (
+      <PersonDetails charId={this.state.selectedChar} />
+    )
+
+    return (
+      <RowBlock
+        left={itemList}
+        right={charDetails} />
     )
   }
 }
