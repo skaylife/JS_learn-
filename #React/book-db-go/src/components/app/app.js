@@ -4,7 +4,6 @@ import Header from '../header';
 import RandomChar from '../randomChar';
 import ErrorMessage from '../error';
 import { CharacterPage, BooksPage, HousesPage, BooksItem } from '../pages';
-import PersonDetails from '../itemDetails';
 import gotService from '../../services/gotService';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
@@ -52,20 +51,26 @@ export default class App extends Component {
         const char = this.state.showRandomChar ? <RandomChar /> : null;
         return (
             <>
-                <Container>
-                    <Header />
-                </Container>
-                <Container>
-                    <Row>
-                        <Col lg={{ size: 5, offset: 0 }}>
-                            {char}
-                            <button
-                                className="toggle-btn"
-                                onClick={this.toggleRandomChar}>Toggle random character</button>
-                        </Col>
-                    </Row>
-                    <CharacterPage />
-                </Container>
+                <Router>
+
+                    <Container>
+                        <Header />
+                    </Container>
+                    <Container>
+                        <Row>
+                            <Col lg={{ size: 5, offset: 0 }}>
+                                {char}
+                                <button
+                                    className="toggle-btn"
+                                    onClick={this.toggleRandomChar}>Toggle random character</button>
+                            </Col>
+                        </Row>
+                        <CharacterPage />
+                        <BooksPage />
+                        <HousesPage />
+                    </Container>
+                </Router>
+
             </>
         );
     }
