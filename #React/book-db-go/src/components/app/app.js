@@ -50,7 +50,7 @@ export default class App extends Component {
 
         const char = this.state.showRandomChar ? <RandomChar /> : null;
         return (
-            <>
+            <div className="app">
                 <Router>
 
                     <Container>
@@ -65,13 +65,21 @@ export default class App extends Component {
                                     onClick={this.toggleRandomChar}>Toggle random character</button>
                             </Col>
                         </Row>
-                        <CharacterPage />
-                        <BooksPage />
-                        <HousesPage />
+                        <Route path='/' exact component={() => <h1> GOGOOGOGGOG </h1>} />
+
+                        <Route path='/characters' component={CharacterPage} />
+                        <Route path='/houses' component={HousesPage} />
+                        <Route path='/books' exact component={BooksPage} />
+                        <Route path='/books/:id' render={
+                            ({ match }) => {
+                                const { id } = match.params;
+                                <BooksItem bookId={id} />
+                            }
+                        } />
                     </Container>
                 </Router>
 
-            </>
+            </div>
         );
     }
 };

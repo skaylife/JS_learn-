@@ -7,15 +7,15 @@ const Field = ({ item, field, label }) => {
         <li className="list-group-item d-flex justify-content-between">
             <span className="term">{label}</span>
             <span>{item[field]}</span>
-        </li>)
+        </li>
+    )
 }
 
 export {
     Field
-}
+};
 
 export default class ItemDetails extends Component {
-
 
 
     state = {
@@ -23,21 +23,17 @@ export default class ItemDetails extends Component {
     }
 
     componentDidMount() {
-        this.updataItem();
+        this.updateItem();
     }
 
-    //Условие которое перезаписывает согласно нажатому персонажу
     componentDidUpdate(prevProps) {
         if (this.props.itemId !== prevProps.itemId) {
-            this.updataItem();
+            this.updateItem();
         }
     }
 
-    updataItem() {
-        // { id, name, url, gender, born, died, culture } = item;
+    updateItem() {
         const { itemId, getData } = this.props;
-        // console.log(`Person DETAILS222 ${this.props.item}`)
-
         if (!itemId) {
             return;
         }
@@ -46,21 +42,18 @@ export default class ItemDetails extends Component {
             .then((item) => {
                 this.setState({ item })
             })
-        // this.foo.bar = 0;
     }
 
     render() {
 
         if (!this.state.item) {
-            return <span className="">Выберите персонажа</span>
+            return <span className='select-error'>Please select item in the list</span>
         }
-
         const { item } = this.state;
-
-        const { name } = item
+        const { name } = item;
 
         return (
-            <div className="person-details rounded">
+            <div className="char-details rounded">
                 <h4>{name}</h4>
                 <ul className="list-group list-group-flush">
                     {
