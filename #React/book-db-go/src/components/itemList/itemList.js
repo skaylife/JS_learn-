@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './itemList.css';
 import ErrorMessage from '../error';
 import Spinner from '../spinner/';
+import PropTypes from 'prop-types';
 
 
 
@@ -74,11 +75,22 @@ export default class ItemList extends Component {
         return (
             <ul className="item-list list-group">
                 {items}
-
             </ul>
         );
     }
 }
+
+ItemList.defaultProps = {
+    onItemSelected: () => {
+
+    }
+}
+
+ItemList.propTypes = {
+    onItemSelected: PropTypes
+}
+
+
 
 
                 // let sendData = (obj) => {
