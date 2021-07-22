@@ -93,6 +93,21 @@ export default class ItemList extends Component {
 }
 
 
+ItemList.defaultProps = {
+    onItemSelected: () => { }
+}
+
+
+
+
+
+// const f = () => {
+//     return (b) => {
+//     }
+// }
+
+// export default f()
+
 
 
 

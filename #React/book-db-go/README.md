@@ -66,3 +66,20 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+```sh
+import { useState } from "react";
+import "./styles.css";
+
+export default function App() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div className="App">
+      <p>Вы кликнули {count} раз</p>
+      <button onClick={() => setCount(count + 1)}>Кликни меня</button>
+    </div>
+  );
+}
+sh```
