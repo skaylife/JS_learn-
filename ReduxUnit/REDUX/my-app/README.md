@@ -1,5 +1,14 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
+![Иллюстрация к проекту](https://github.com/skaylife/JS_learn-/ReduxUnit/REDUX/my-app/opera_8YKKV57MoK.png)
+
+`![Image alt](https://github.com/{username}/{repository}/raw/{branch}/{path}/image.png)`
+
+{username} — ваш ник на ГитХабе;
+{repository} — репозиторий где хранятся картинки;
+{branch} — ветка репозитория;
+{path} — путь к месту нахождения картинки.
+
 ## Available Scripts
 
 In the project directory, you can run:
