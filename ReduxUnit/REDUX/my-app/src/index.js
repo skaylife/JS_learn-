@@ -1,4 +1,4 @@
-import { createStore, bindActionCreators } from 'redux';
+import { createStore } from 'redux';
 import reducer from './reducer';
 import * as actions from './actions';
 import Counter from './components/counter';
