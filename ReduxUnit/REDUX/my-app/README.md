@@ -1,6 +1,6 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app), using the [Redux](https://redux.js.org/) and [Redux Toolkit](https://redux-toolkit.js.org/) template.
 
-![Иллюстрация к проекту](https://github.com/skaylife/JS_learn-/ReduxUnit/REDUX/my-app/opera_8YKKV57MoK.png)
+![opera_8YKKV57MoK](https://user-images.githubusercontent.com/48244659/127483002-1a782b33-0cf4-4a3f-b2b3-60e5dc79847c.png)
 
 `![Image alt](https://github.com/{username}/{repository}/raw/{branch}/{path}/image.png)`
 
