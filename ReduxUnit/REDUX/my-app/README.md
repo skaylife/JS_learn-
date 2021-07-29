@@ -11,6 +11,32 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 ## Available Scripts
 
+### Теория с примером изменения языка
+```
+<App lang={lang}>
+<Provider value={lang}>
+  <MainPage lang={lang}>
+    <Blog lang={lang}>
+    </Blog>
+  </MainPage>
+
+    <ContactsPage>
+        <Consumer>
+          {
+            (lang) => {
+              return (
+                <Address lang={lang}>
+                
+                </Address>
+              )
+            }
+          }
+        </Consumer>
+    </ContactsPage>
+  </Provider>
+</App>
+```
+
 In the project directory, you can run:
 
 ### `yarn start`
