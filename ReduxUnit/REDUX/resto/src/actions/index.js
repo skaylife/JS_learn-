@@ -5,6 +5,13 @@ const menuLoaded = (newMenu) => {
   };
 }
 
+const menuRequested = () => {
+  return {
+    type: 'MENU_REQUSTED'
+  };
+}
+
 export {
-  menuLoaded
+  menuLoaded,
+  menuRequested
 };
