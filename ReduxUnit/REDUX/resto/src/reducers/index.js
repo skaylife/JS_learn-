@@ -27,13 +27,23 @@ const reducer = (state = initialState, action) => {
         price: item.price,
         url: item.url,
         id: item.id
-      }
+      };
 
       return {
         ...state,
-        item: [
+        items: [
           ...state.items,
           newItem
+        ]
+      }
+    case 'ITEM_REMOVE_FROM_CART':
+      const idx = action.payload;
+      const itemIndex = state.items.findIndex(item => item.id === idx);
+      return {
+        ...state,
+        items: [
+          ...state.items.slice(0, itemIndex),
+          ...state.items.slice(itemIndex + 1)
         ]
       }
     default:
