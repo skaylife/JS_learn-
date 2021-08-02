@@ -134,3 +134,7 @@ function Comp2() {
 
 export default Comp2;
 ```
+
+## Скрины проектов
+![opera_NB5IBqf08V](https://user-images.githubusercontent.com/48244659/127815920-bb4e9f26-2214-4110-b2d1-8d2217d4b1b4.jpg)
+
