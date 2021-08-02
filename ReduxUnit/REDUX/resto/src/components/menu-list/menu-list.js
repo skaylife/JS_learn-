@@ -18,7 +18,7 @@ class MenuList extends Component {
     }
 
     render() {
-        const { menuItems, loading } = this.props
+        const { menuItems, loading, addedToCart } = this.props
 
         if (loading) {
             return <Spinner />
@@ -27,7 +27,10 @@ class MenuList extends Component {
             <ul className="menu__list">
                 {
                     menuItems.map(menuItem => {
-                        return <MenuListItem key={menuItem.id} menuItem={menuItem} />
+                        return <MenuListItem
+                            key={menuItem.id}
+                            menuItem={menuItem}
+                            onAddToCart={() => addedToCart(menuItem.id)} />
                     })
                 }
             </ul>
@@ -44,7 +47,7 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = {
     menuLoaded,
-    menuRequested
+    menuRequested,
 };
 
 export default WithRestoService()(connect(mapStateToProps, mapDispatchToProps)(MenuList));
