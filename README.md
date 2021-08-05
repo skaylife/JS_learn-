@@ -7,7 +7,7 @@ npm i или npm install
 ## Запустить локально сервер JSON 
 npx json-server --watch db.json
 
-## Тема "Getter and Setter" Practice 
+## Тема "Getter and Setter" Practice.
 `https://jsfiddle.net/7yf0mr9k/`
 
 ## Как установить чистиый TypeScript?
